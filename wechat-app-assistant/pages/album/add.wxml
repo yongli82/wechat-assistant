@@ -1,0 +1,12 @@
+<!--pages/album/add.wxml-->
+<view class="album-add">
+    <form bindsubmit="formSubmit">
+    <view class="album-name">
+        <input name="name" placeholder="请填写相册名字" auto-focus/>
+    </view>
+    <view class="btn-box">
+        <button type="primary" formType="submit" size="default">提交</button>
+    </view>
+    </form>
+</view>
+

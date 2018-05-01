@@ -1,0 +1,31 @@
+<view class="photo-add">
+    <form bindsubmit="formSubmit">
+    <view class="desc">
+        <textarea name="desc" placeholder="填写备注（可以不写）" />
+    </view>
+    
+    <view class="select-album">
+        <view class="title">请选择一个相册</view>
+        <picker bindchange="bindPickerChange" value="{{albumIndex}}" range="{{albums}}" range-key="name">
+            <view class="picker">
+            当前选择：{{albums[albumIndex].name}}
+            </view>
+        </picker>
+    </view>
+
+    <view class="video-box" wx:if="{{video}}">
+        <video class="video" src="{{video}}"></video>
+        <view style="text-align:center;color:green;font-size:14px;padding-top:7px;">当前视频大小为{{size}}M</view>
+    </view>
+
+    <view class="add-video">
+    	<text bindtap="addVideo" style="color:blue;">选择或拍摄视频</text>
+    </view>
+    
+    
+    
+    <view class="btn-box">
+        <button type='primary' formType="submit" size="default">提交</button>
+    </view>
+    </form>
+</view>

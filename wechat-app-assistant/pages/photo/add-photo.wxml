@@ -1,0 +1,45 @@
+<view class="photo-add">
+    <form bindsubmit="formSubmit">
+    <view class="desc">
+        <textarea name="desc" placeholder="填写备注（可以不写）" />
+    </view>
+    
+    <view class="select-album">
+        <view class="title">请选择一个相册</view>
+        <picker bindchange="bindPickerChange" value="{{albumIndex}}" range="{{albums}}" range-key="name">
+            <view class="picker">
+            当前选择：{{albums[albumIndex].name}}
+            </view>
+        </picker>
+    </view>
+    
+    <view class="weui-cells">
+          <view class="weui-cell">
+            <view class="weui-cell__bd">
+              <view class="weui-uploader">
+                <view class="weui-uploader__hd">
+                  <view class="weui-uploader__title">点击可预览选好的图片</view>
+                  <view class="weui-uploader__info"></view>
+                </view>
+                <view class="weui-uploader__bd">
+                  <view class="weui-uploader__files">
+                    <block wx:for="{{photos}}" wx:for-item="image">
+                      <view class="weui-uploader__file">
+                        <image class="weui-uploader__img" src="{{image.src}}" data-src="{{image}}" bindtap="previewImage"></image>
+                      </view>
+                    </block>
+                  </view>
+                  <view class="weui-uploader__input-box">
+                    <view class="weui-uploader__input" bindtap="chooseImage"></view>
+                  </view>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+    
+    <view class="btn-box">
+        <button type='primary' formType="submit" size="default">提交</button>
+    </view>
+    </form>
+</view>

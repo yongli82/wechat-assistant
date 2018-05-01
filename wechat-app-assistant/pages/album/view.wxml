@@ -1,0 +1,29 @@
+<view class="photos">
+  <block wx:for="{{photos}}" wx:key="id" wx:for-index="idx" wx:for-item="photo_group">
+    <view class="photo">
+      <view class="desc">{{photo_group.description}}</view>
+      <view class="items">
+        <block wx:for="{{photo_group.photos}}" wx:if="{{photo_group.photos.length==1}}" wx:key="id" wx:for-index="pidx" wx:for-item="photoItem">
+          <image src="{{photoItem.path}}" style="width:10em;height:10em;"></image>
+        </block>
+
+        <block wx:for="{{photo_group.photos}}" wx:if="{{photo_group.photos.length>1}}" wx:key="id" wx:for-index="pidx" wx:for-item="photoItem">
+          <image src="{{photoItem.path}}" data-current_url="{{photoItem.path}}" style="width:5em;height:5em;display:inline-block;" bindtap="previewImage"></image>
+        </block>
+      </view>
+    </view>
+  </block>
+</view>
+
+<view class='options'>
+  <navigator class="menu-option" url="/pages/photo/add-photo?album_id={{album_id}}">
+    <view class="item">
+      <text>添加照片</text>
+    </view>
+  </navigator>
+  <navigator class="menu-option" url="/pages/photo/add-video?album_id={{album_id}}">
+    <view class="item">
+      <text>添加视频</text>
+    </view>
+  </navigator>
+</view>

@@ -1,0 +1,8 @@
+{
+  "backgroundTextStyle": "dark",
+  "navigationBarTitleText": "为相册上传图片",
+  "backgroundColor": "#F2F2F2",
+  "navigationBarBackgroundColor": "#F2F2F2",
+  "navigationBarTextStyle": "black",
+  "enablePullDownRefresh": true
+}

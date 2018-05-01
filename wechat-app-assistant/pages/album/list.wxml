@@ -1,0 +1,19 @@
+<view class="albums">
+    <block wx:for="{{albums}}" wx:key="id" wx:for-index="idx" wx:for-item="album">
+        <navigator url='/pages/album/view?id={{album.id}}'>
+        <view class="album">
+            <view class="name">{{album.name}}</view>
+            <view class="photo-total">{{album.photoTotal}}</view>
+            <view class="update-time">{{album.formatUpdateTime}}</view>
+        </view>
+        </navigator>
+    </block>
+</view>
+
+<view class='options'>
+    <navigator url='/pages/album/add'>
+        <view class="item">
+            <text>新建</text>
+        </view>
+    </navigator>
+</view>

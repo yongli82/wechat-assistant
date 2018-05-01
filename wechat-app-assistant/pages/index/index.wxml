@@ -1,0 +1,19 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="userinfo">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view>
+  <view class="menus">
+    <view class="menu" style="border-left:#EF1F12 solid 3px;">
+      <navigator class="menu-name" url="/pages/album/list">
+        <text class="menu-name-text">相册集</text>
+      </navigator>
+      <navigator class="menu-option" url="/pages/photo/add-photo">照片</navigator>
+      <navigator class="menu-option" url="/pages/photo/add-video">视频</navigator>
+    </view>
+  </view>
+</view>
