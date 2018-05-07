@@ -15,7 +15,7 @@ from models import Album, Photo, PhotoGroup
 
 logger = logging.getLogger(__name__)
 
-bp = Blueprint('api', __name__)
+bp = Blueprint('album', __name__)
 
 PER_PAGE = 10
 

@@ -36,6 +36,6 @@ App({
   globalData: {
     userInfo: null,
     appName: "私家小助手",
-    baseUrl: "http://122.112.197.93"
+    baseUrl: "https://app.codeessay.com"
   }
 })

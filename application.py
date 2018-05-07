@@ -5,6 +5,7 @@ from flask import Flask
 
 import album
 import config
+import task
 from ext import db
 
 
@@ -19,6 +20,7 @@ def create_app():
         db.create_all()
 
     album.register_api(app)
+    task.register_api(app)
 
     return app
 
